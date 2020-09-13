@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E1FC6C9250CECE500845098 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1FC6C8250CECE500845098 /* TabBarView.swift */; };
+		7E6B61FD250E3F1500B5913D /* DatabaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B61FC250E3F1500B5913D /* DatabaseRef.swift */; };
+		7E6B61FF250E5A1E00B5913D /* MyOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B61FE250E5A1D00B5913D /* MyOrders.swift */; };
+		7E6B6201250E5EB700B5913D /* Myorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B6200250E5EB700B5913D /* Myorder.swift */; };
+		7E6B6203250E679A00B5913D /* MyOrdersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B6202250E679A00B5913D /* MyOrdersCell.swift */; };
 		7EA167FF2506212800315320 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA167FE2506212800315320 /* AppDelegate.swift */; };
 		7EA168012506212800315320 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA168002506212800315320 /* SceneDelegate.swift */; };
 		7EA168032506212800315320 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA168022506212800315320 /* ContentView.swift */; };
@@ -22,9 +27,17 @@
 		7EA1681F2506285C00315320 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA1681E2506285C00315320 /* OrderView.swift */; };
 		7EA16823250628BA00315320 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA16822250628BA00315320 /* AppView.swift */; };
 		7EA168252506290A00315320 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA168242506290A00315320 /* CheckoutView.swift */; };
+		7EDF9BAE250CCF9D003C9049 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EDF9BAD250CCF9C003C9049 /* GoogleService-Info.plist */; };
+		A7728C1D2C5C859C24D71F15 /* Pods_iDine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDFAA6F3BF54077A7FF5ECC /* Pods_iDine.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B1434774BDD4BECAE5DFE50 /* Pods-iDine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDine.debug.xcconfig"; path = "Target Support Files/Pods-iDine/Pods-iDine.debug.xcconfig"; sourceTree = "<group>"; };
+		7E1FC6C8250CECE500845098 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		7E6B61FC250E3F1500B5913D /* DatabaseRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRef.swift; sourceTree = "<group>"; };
+		7E6B61FE250E5A1D00B5913D /* MyOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrders.swift; sourceTree = "<group>"; };
+		7E6B6200250E5EB700B5913D /* Myorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Myorder.swift; sourceTree = "<group>"; };
+		7E6B6202250E679A00B5913D /* MyOrdersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersCell.swift; sourceTree = "<group>"; };
 		7EA167FB2506212800315320 /* iDine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA167FE2506212800315320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EA168002506212800315320 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +55,9 @@
 		7EA1681E2506285C00315320 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		7EA16822250628BA00315320 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		7EA168242506290A00315320 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		7EDF9BAD250CCF9C003C9049 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		824D983DD9BDDF3DFFD85F18 /* Pods-iDine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDine.release.xcconfig"; path = "Target Support Files/Pods-iDine/Pods-iDine.release.xcconfig"; sourceTree = "<group>"; };
+		FFDFAA6F3BF54077A7FF5ECC /* Pods_iDine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iDine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +65,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7728C1D2C5C859C24D71F15 /* Pods_iDine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70C80CF822E8B7ECDA84C942 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFDFAA6F3BF54077A7FF5ECC /* Pods_iDine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7EA167F22506212800315320 = {
 			isa = PBXGroup;
 			children = (
 				7EA167FD2506212800315320 /* iDine */,
 				7EA167FC2506212800315320 /* Products */,
+				B3C276AAA5390116D9F13ECD /* Pods */,
+				70C80CF822E8B7ECDA84C942 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,8 +115,14 @@
 				7EA168182506219800315320 /* menu.json */,
 				7EA168042506212D00315320 /* Assets.xcassets */,
 				7EA168092506212D00315320 /* LaunchScreen.storyboard */,
+				7EDF9BAD250CCF9C003C9049 /* GoogleService-Info.plist */,
 				7EA1680C2506212D00315320 /* Info.plist */,
 				7EA168062506212D00315320 /* Preview Content */,
+				7E1FC6C8250CECE500845098 /* TabBarView.swift */,
+				7E6B61FC250E3F1500B5913D /* DatabaseRef.swift */,
+				7E6B61FE250E5A1D00B5913D /* MyOrders.swift */,
+				7E6B6200250E5EB700B5913D /* Myorder.swift */,
+				7E6B6202250E679A00B5913D /* MyOrdersCell.swift */,
 			);
 			path = iDine;
 			sourceTree = "<group>";
@@ -102,6 +135,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B3C276AAA5390116D9F13ECD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B1434774BDD4BECAE5DFE50 /* Pods-iDine.debug.xcconfig */,
+				824D983DD9BDDF3DFFD85F18 /* Pods-iDine.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EA1680F2506212D00315320 /* Build configuration list for PBXNativeTarget "iDine" */;
 			buildPhases = (
+				F0F2B195A484A7621B1DCAAD /* [CP] Check Pods Manifest.lock */,
 				7EA167F72506212800315320 /* Sources */,
 				7EA167F82506212800315320 /* Frameworks */,
 				7EA167F92506212800315320 /* Resources */,
+				C9698B9A1134DC388BE0AC49 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +205,7 @@
 			files = (
 				7EA1680B2506212D00315320 /* LaunchScreen.storyboard in Resources */,
 				7EA168082506212D00315320 /* Preview Assets.xcassets in Resources */,
+				7EDF9BAE250CCF9D003C9049 /* GoogleService-Info.plist in Resources */,
 				7EA168192506219900315320 /* menu.json in Resources */,
 				7EA168052506212D00315320 /* Assets.xcassets in Resources */,
 			);
@@ -168,14 +213,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C9698B9A1134DC388BE0AC49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iDine/Pods-iDine-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iDine/Pods-iDine-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iDine/Pods-iDine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0F2B195A484A7621B1DCAAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iDine-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7EA167F72506212800315320 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E6B6201250E5EB700B5913D /* Myorder.swift in Sources */,
 				7EA168172506219100315320 /* Order.swift in Sources */,
+				7E6B6203250E679A00B5913D /* MyOrdersCell.swift in Sources */,
 				7EA168252506290A00315320 /* CheckoutView.swift in Sources */,
+				7E6B61FD250E3F1500B5913D /* DatabaseRef.swift in Sources */,
 				7EA167FF2506212800315320 /* AppDelegate.swift in Sources */,
+				7E6B61FF250E5A1E00B5913D /* MyOrders.swift in Sources */,
+				7E1FC6C9250CECE500845098 /* TabBarView.swift in Sources */,
 				7EA168012506212800315320 /* SceneDelegate.swift in Sources */,
 				7EA1681B2506228900315320 /* ItemRow.swift in Sources */,
 				7EA168032506212800315320 /* ContentView.swift in Sources */,
@@ -319,6 +411,7 @@
 		};
 		7EA168102506212D00315320 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B1434774BDD4BECAE5DFE50 /* Pods-iDine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -340,6 +433,7 @@
 		};
 		7EA168112506212D00315320 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 824D983DD9BDDF3DFFD85F18 /* Pods-iDine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

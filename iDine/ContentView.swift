@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     
     let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
-
+    
     
     var body: some View {
         NavigationView {
@@ -23,10 +24,21 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationBarTitle("Menu")
+            .navigationBarTitle("Menu", displayMode: .inline)
             .listStyle(GroupedListStyle())
+            .navigationBarItems(trailing: Button(action: {
+                
+                try! Auth.auth().signOut()
+                UserDefaults.standard.set(false, forKey: "status")
+                NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
+                
+            }) {
+                Text("Log out")
+            })
+            
         }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

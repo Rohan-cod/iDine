@@ -1,0 +1,6 @@
+framework module Pods_iDine {
+  umbrella header "Pods-iDine-umbrella.h"
+
+  export *
+  module * { export * }
+}

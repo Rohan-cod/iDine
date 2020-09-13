@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct CheckoutView: View {
     
@@ -53,6 +54,26 @@ struct CheckoutView: View {
             ) {
                 Button("Confirm order") {
                     self.showingPaymentAlert.toggle()
+                    // Add order to database
+                    guard let currentuid = Auth.auth().currentUser?.uid else { return }
+                    let total = order.total
+                    let date = Int(NSDate().timeIntervalSince1970)
+                    let numberOfItems = order.items.count
+                    let values = ["total": total,
+                              "date": date,
+                              "numberOfItems": numberOfItems
+                    ] as [String : Any]
+                    let orderid = ORDERS_REF.child(currentuid).childByAutoId()
+                    orderid.setValue(values)
+                    for item in order.items {
+                        let name = item.name
+                        let price = item.price
+                        let val = [
+                            "name": name,
+                            "price": price
+                        ] as [String : Any]
+                        orderid.child("items").childByAutoId().setValue(val)
+                    }
                 }
             }
         }
@@ -61,6 +82,7 @@ struct CheckoutView: View {
             Alert(title: Text("Order confirmed"), message: Text("Your total was $\(totalPrice, specifier: "%.2f") – thank you!"), dismissButton: .default(Text("OK")))
         }
     }
+    
 }
 
 struct CheckoutView_Previews: PreviewProvider {
