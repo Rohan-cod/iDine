@@ -74,12 +74,14 @@ struct CheckoutView: View {
                         ] as [String : Any]
                         orderid.child("items").childByAutoId().setValue(val)
                     }
+                    
                 }
             }
         }
         .navigationBarTitle(Text("Payment"), displayMode: .inline)
         .alert(isPresented: $showingPaymentAlert) {
-            Alert(title: Text("Order confirmed"), message: Text("Your total was $\(totalPrice, specifier: "%.2f") – thank you!"), dismissButton: .default(Text("OK")))
+            Alert(title: Text("Order confirmed"), message: Text("Your total was $\(totalPrice, specifier: "%.2f") – thank you!"), dismissButton: .default(Text("OK"), action: { order.removeall(); ContentView() }))
+            
         }
     }
     

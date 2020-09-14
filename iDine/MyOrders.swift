@@ -11,7 +11,7 @@ import Firebase
 struct MyOrders: View {
     
     @State private var orders = [Myorder]()
-    
+
     
     
     var body: some View {
@@ -24,6 +24,7 @@ struct MyOrders: View {
             .navigationBarTitle("My Orders")
         }.onAppear {
             fetchOrders()
+            
         }
     }
     
@@ -32,26 +33,21 @@ struct MyOrders: View {
         ORDERS_REF.child(currentuid).observe(.childAdded) { (snapshot) in
             
             guard let dictionary = snapshot.value as? Dictionary<String, AnyObject> else { return }
-            
-            var items = [Item]()
-            
-            ORDERS_REF.child(currentuid).child(snapshot.key).child("items").observe(.value) { (itemsnapshot) in
-                guard let itemdictionary = itemsnapshot.value as? Dictionary<String, AnyObject> else { return }
-                for (key, val) in itemdictionary {
-                    guard let name = val["name"] as? String else { return }
-                    guard let price = val["price"] as? Int else { return }
-                    items.append(Item(id: UUID(), name: name, price: price))
-                }
-                
-            }
             guard let total = dictionary["total"] as? Int else { return }
             guard let numberOfItems = dictionary["numberOfItems"] as? Int else { return }
             guard let date = dictionary["date"] as? Int else { return }
+            guard let items = dictionary["items"] as? Dictionary<String, AnyObject> else { return }
+            var order = Myorder(id: UUID(), total: total, numberOfItems: numberOfItems, date: date, items: [Item]())
+            for (key, val) in items {
+                
+                guard let valdictionary = val as? Dictionary<String, AnyObject> else { return }
+                guard let name = valdictionary["name"] as? String else { return }
+                guard let price = valdictionary["price"] as? Int else { return }
+                order.items.append(Item(id: UUID(), name: name, price: price))
+                
+            }
             
-            let order = Myorder(id: UUID(), total: total, numberOfItems: numberOfItems, date: date, items: items)
             self.orders.append(order)
-            
-            
         }
         
     }

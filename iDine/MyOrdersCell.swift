@@ -12,29 +12,31 @@ struct MyOrdersCell: View {
     let order: Myorder
     
     var body: some View {
-        VStack {
-            Text("Total: \(order.total)$")
-                .font(.title)
-                .fontWeight(.bold)
-            Text("\(order.numberOfItems) Items")
-                .font(.title)
-                .fontWeight(.bold)
-            ForEach(order.items) { item in
+        
+        NavigationLink(destination: OrderDetail(order: order)) {
+            HStack {
                 
                 VStack {
-                    Text("Name: \(item.name)")
-                    Text("Price: \(item.price)$")
+                    Text("Total: \(order.total)$")
+                        .fontWeight(.bold)
+                    Spacer()
+                    Text("Number of Items: \(order.numberOfItems)")
+                        .fontWeight(.bold)
+                    
+                        
                 }
+                .font(.title3)
                 
+                Spacer()
                 
+                Text(timeAgoToDisplay(order.date))
+                    .foregroundColor(.gray)
             }
-            Text(timeAgoToDisplay(order.date))
-                .foregroundColor(.gray)
         }
     }
     
     func timeAgoToDisplay(_ time: Int) -> String {
-        let secondsAgo = Int(time)
+        let secondsAgo = Int(NSDate().timeIntervalSince1970) - Int(time)
         
         let minute = 60
         let hour = 60 * minute

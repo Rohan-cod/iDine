@@ -29,4 +29,8 @@ class Order: ObservableObject {
             items.remove(at: index)
         }
     }
+    
+    func removeall() {
+        items.removeAll()
+    }
 }
