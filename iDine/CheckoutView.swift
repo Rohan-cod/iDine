@@ -56,9 +56,13 @@ struct CheckoutView: View {
                     self.showingPaymentAlert.toggle()
                     // Add order to database
                     guard let currentuid = Auth.auth().currentUser?.uid else { return }
-                    let total = order.total
+                    let total = totalPrice
                     let date = Int(NSDate().timeIntervalSince1970)
-                    let numberOfItems = order.items.count
+                    var quant: Int = 0
+                    for item in order.items {
+                        quant += item.quantity
+                    }
+                    let numberOfItems = quant
                     let values = ["total": total,
                               "date": date,
                               "numberOfItems": numberOfItems
@@ -68,9 +72,11 @@ struct CheckoutView: View {
                     for item in order.items {
                         let name = item.name
                         let price = item.price
+                        let quantity = item.quantity
                         let val = [
                             "name": name,
-                            "price": price
+                            "price": price,
+                            "quantity": quantity
                         ] as [String : Any]
                         orderid.child("items").childByAutoId().setValue(val)
                     }
@@ -80,7 +86,7 @@ struct CheckoutView: View {
         }
         .navigationBarTitle(Text("Payment"), displayMode: .inline)
         .alert(isPresented: $showingPaymentAlert) {
-            Alert(title: Text("Order confirmed"), message: Text("Your total was $\(totalPrice, specifier: "%.2f") – thank you!"), dismissButton: .default(Text("OK"), action: { order.removeall(); ContentView() }))
+            Alert(title: Text("Order confirmed"), message: Text("Your total was $\(totalPrice, specifier: "%.2f") – thank you!"), dismissButton: .default(Text("OK"), action: { order.reset() }))
             
         }
     }

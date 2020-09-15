@@ -18,6 +18,7 @@ struct OrderView: View {
                     ForEach(order.items) { item in
                         HStack {
                             Text(item.name)
+                            Text(" x\(item.quantity)")
                             Spacer()
                             Text("$\(item.price)")
                         }

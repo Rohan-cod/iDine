@@ -11,7 +11,7 @@ import Firebase
 struct MyOrders: View {
     
     @State private var orders = [Myorder]()
-
+    
     
     
     var body: some View {
@@ -30,26 +30,26 @@ struct MyOrders: View {
     
     func fetchOrders() {
         guard let currentuid = Auth.auth().currentUser?.uid else { return }
-        ORDERS_REF.child(currentuid).observe(.childAdded) { (snapshot) in
+        ORDERS_REF.child(currentuid).observeSingleEvent(of: .childAdded) { (snapshot) in
             
-            guard let dictionary = snapshot.value as? Dictionary<String, AnyObject> else { return }
-            guard let total = dictionary["total"] as? Int else { return }
-            guard let numberOfItems = dictionary["numberOfItems"] as? Int else { return }
-            guard let date = dictionary["date"] as? Int else { return }
-            guard let items = dictionary["items"] as? Dictionary<String, AnyObject> else { return }
+            guard let dictionary = snapshot.value as? Dictionary<String, AnyObject> else { print("dictionary"); return }
+            guard let total = dictionary["total"] as? Double else { print("total"); return }
+            guard let numberOfItems = dictionary["numberOfItems"] as? Int else { print("numberofitems"); return }
+            guard let date = dictionary["date"] as? Int else { print("date"); return }
+            guard let items = dictionary["items"] as? Dictionary<String, AnyObject> else { print("items"); return }
             var order = Myorder(id: UUID(), total: total, numberOfItems: numberOfItems, date: date, items: [Item]())
             for (key, val) in items {
                 
-                guard let valdictionary = val as? Dictionary<String, AnyObject> else { return }
-                guard let name = valdictionary["name"] as? String else { return }
-                guard let price = valdictionary["price"] as? Int else { return }
-                order.items.append(Item(id: UUID(), name: name, price: price))
+                guard let valdictionary = val as? Dictionary<String, AnyObject> else { print("valdictionary"); return }
+                guard let name = valdictionary["name"] as? String else { print("name"); return }
+                guard let price = valdictionary["price"] as? Int else { print("price"); return }
+                guard let quantity = valdictionary["quantity"] as? Int else { print("quantity"); return }
+                order.items.append(Item(id: UUID(), name: name, price: price, quantity: quantity))
                 
             }
             
             self.orders.append(order)
         }
-        
     }
 }
 

@@ -1,10 +1,3 @@
-//
-//  Menu.swift
-//  iDine
-//
-//  Created by Paul Hudson on 27/06/2019.
-//  Copyright © 2019 Hacking with Swift. All rights reserved.
-//
 
 import SwiftUI
 
@@ -21,6 +14,7 @@ struct MenuItem: Codable, Equatable, Identifiable {
     var price: Int
     var restrictions: [String]
     var description: String
+    var quantity: Int = 0
 
     var mainImage: String {
         name.replacingOccurrences(of: " ", with: "-").lowercased()

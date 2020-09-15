@@ -17,7 +17,7 @@ struct MyOrdersCell: View {
             HStack {
                 
                 VStack {
-                    Text("Total: \(order.total)$")
+                    Text("Total: \(order.total, specifier: "%g")$")
                         .fontWeight(.bold)
                     Spacer()
                     Text("Number of Items: \(order.numberOfItems)")

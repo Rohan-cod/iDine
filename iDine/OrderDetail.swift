@@ -23,8 +23,11 @@ struct OrderDetail: View {
                         .overlay(Circle().stroke(Color.gray, lineWidth: 2))
                     
                     VStack(alignment: .leading) {
-                        Text(item.name)
-                            .font(.headline)
+                        HStack {
+                            Text(item.name)
+                                .font(.headline)
+                            Text(" x\(item.quantity)")
+                        }
                         
                     }
                     Spacer()

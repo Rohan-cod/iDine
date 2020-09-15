@@ -10,6 +10,8 @@ import SwiftUI
 struct ItemRow: View {
     
     var item: MenuItem
+    @State var stepperValue: Int = 5000
+    @EnvironmentObject var order: Order
     static let colors: [String: Color] = ["D": .purple, "G": .black, "N": .red, "S": .blue, "V": .green]
     
     var body: some View {
@@ -23,18 +25,27 @@ struct ItemRow: View {
                     Text(item.name)
                         .font(.headline)
                     
-                    Text(String("$\(item.price)"))
+                    HStack {
+                        Text(String("$\(item.price)"))
+                        ForEach(item.restrictions, id: \.self) { restriction in
+                            Text(restriction)
+                                .font(.caption)
+                                .fontWeight(.black)
+                                .padding(5)
+                                .background(Self.colors[restriction, default: .black])
+                                .clipShape(Circle())
+                                .foregroundColor(.white)
+                        }
+                    }
                 }
                 Spacer()
-                ForEach(item.restrictions, id: \.self) { restriction in
-                    Text(restriction)
-                        .font(.caption)
-                        .fontWeight(.black)
-                        .padding(5)
-                        .background(Self.colors[restriction, default: .black])
-                        .clipShape(Circle())
-                        .foregroundColor(.white)
-                }
+                Stepper("",
+                        onIncrement: {
+                            self.order.add(item: self.item)
+                        },
+                        onDecrement: {
+                            self.order.remove(item: self.item)
+                        })
                 
             }
         }

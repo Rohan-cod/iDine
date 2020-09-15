@@ -11,7 +11,7 @@ import Foundation
 struct Myorder: Identifiable {
     
     var id = UUID()
-    var total: Int
+    var total: Double
     var numberOfItems: Int
     var date: Int
     var items: [Item]
